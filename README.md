@@ -6,6 +6,7 @@
   - [`v-show`](#v-show)
   - [`v-for`](#v-for)
   - [Detailed `v-for`](#detailed-v-for)
+  - [List Keys](#list-keys)
 
 ## `v-if`
 
@@ -62,11 +63,22 @@
 
 ```html
 <li v-for="value in { name:'Gagan', age:21 }">{{ value }}</li>
-<li v-for="(value, key, index) in { name:'Gagan', age:21 }"> {{key}} : {{ value }} - {{ index }} </li>
+<li v-for="(value, key, index) in { name:'Gagan', age:21 }">
+  {{key}} : {{ value }} - {{ index }}
+</li>
 ```
 
 - `v-for` to show a range
 
 ```html
-<li v-for="item in 10"> {{item}} </li>
+<li v-for="item in 10">{{item}}</li>
 ```
+
+## List Keys
+
+- Make sure to add :key="index" to prevent unexpected behaviour
+- Eg.
+  - Consider we have a list of input fields
+  - If we input text in 1st list item and delete the elemnt
+  - All the elemnts in list il move array up and the text will still be shown in topmost list elemnt instead of getting deleted
+  - This is prevented using keys
