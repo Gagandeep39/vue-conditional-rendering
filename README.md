@@ -3,6 +3,8 @@
 - [Conditional Rendering](#conditional-rendering)
   - [`v-if`](#v-if)
   - [`v-else`](#v-else)
+  - [`v-show`](#v-show)
+  - [`v-for`](#v-for)
 
 ## `v-if`
 
@@ -28,4 +30,21 @@
 <ul v-else>
   <li>Goal</li>
 </ul>
+```
+
+## `v-show`
+
+- Alternative to v-if
+- Doesnt hide the data complete
+- Applies `display:none` CSS and keep other CSS same
+- Improves performance as adding/removing is costly compared to show/hide
+
+## `v-for`
+
+- Similar to for loop in ther languages
+- Performed in an effcient way
+- Only adds a new element or remove that elemnt when array changes instead of re-redering whole for loop
+
+```html
+<li v-for="goal in goals"> {{ goal }} </li>
 ```
