@@ -2,6 +2,7 @@
 
 - [Conditional Rendering](#conditional-rendering)
   - [`v-if`](#v-if)
+  - [`v-else`](#v-else)
 
 ## `v-if`
 
@@ -13,4 +14,18 @@
 <p v-if="goals.length === 0">
   No goals have been added yet - please start adding some!
 </p>
+```
+
+## `v-else`
+
+- Similar to `else` in other languages
+- **Must** come immediately after `v-if`
+
+```html
+<p v-if="goals.length === 0">
+  No goals have been added yet - please start adding some!
+</p>
+<ul v-else>
+  <li>Goal</li>
+</ul>
 ```
