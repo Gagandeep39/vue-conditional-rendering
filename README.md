@@ -5,6 +5,7 @@
   - [`v-else`](#v-else)
   - [`v-show`](#v-show)
   - [`v-for`](#v-for)
+  - [Detailed `v-for`](#detailed-v-for)
 
 ## `v-if`
 
@@ -46,5 +47,26 @@
 - Only adds a new element or remove that elemnt when array changes instead of re-redering whole for loop
 
 ```html
-<li v-for="goal in goals"> {{ goal }} </li>
+<li v-for="goal in goals">{{ goal }}</li>
+```
+
+## Detailed `v-for`
+
+- For loop with index
+
+```html
+<li v-for="(goal, index) in goals" :key="index">{{ goal }}</li>
+```
+
+- For loop with key-value pairs
+
+```html
+<li v-for="value in { name:'Gagan', age:21 }">{{ value }}</li>
+<li v-for="(value, key, index) in { name:'Gagan', age:21 }"> {{key}} : {{ value }} - {{ index }} </li>
+```
+
+- `v-for` to show a range
+
+```html
+<li v-for="item in 10"> {{item}} </li>
 ```
